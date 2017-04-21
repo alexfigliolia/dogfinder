@@ -21,7 +21,7 @@ class Cart extends Component {
           </div>
           <div className='bc'>
             <button onClick={this.props.cartToggle}>Back</button>
-            <button onClick={this.props.compareToggle}>View Saved Dogs</button>
+            <button onClick={this.props.compareToggle}>Saved Dogs</button>
           </div>
         </div>
       </div>

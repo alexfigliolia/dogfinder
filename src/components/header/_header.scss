@@ -20,17 +20,22 @@ header {
 		right: 10px;
 		box-sizing: border-box;
 		height: 70%;
+		// width: 40px;
 		margin: 0;
-		padding: 10px;
+		padding: 0 7.5px;
 		border: 1px solid #279FF6;
 		color: #279FF6;
 		cursor: pointer;
 		@include center;
+		font-size: 1em;
 		font-weight: 200;
 		transform: translateY(-100px);
 		transition-duration: 0.2s;
 		@media #{$mq-800}{
 			right: 15px;
+			font-size: 1.5em;
+			padding: 0 15px;
+			// width: 60px;
 		}
 		&:hover {
 			color:#fff;
@@ -58,17 +63,21 @@ header {
 		}
 		&>.heart {
 			cursor: pointer;
-			width: 50px;
+			width: 40px;
 		  	height: 50px;
-		  	margin-left: 2.5px;
+		  	margin: 0;
+		  	margin-left: 2px;
+		  	margin-top: 1px;
 		  	box-sizing: border-box;
 		  	background: url('../public/heart.svg') no-repeat center;
 		  	background-size: 80% 80%;
+		  	transform: scale(1);
 		  	transition-duration: 0.2s;
 		  	@media #{$mq-800}{
 			  	margin-right: 15px;
+			  	margin-top: 0;
 			  	height: 80px;
-			  	width: 80px;
+			  	width: 75px;
 			}
 		}
 		.heart-open {
@@ -85,7 +94,7 @@ header {
 		  display: inline-block;
 		  width: 50px;
 		  height: 50px;
-		  margin-right: 2.5px;
+		  // margin-right: 2.5px;
 		  border-radius: 100%;
 		  border: 25px solid #279FF6;
 		  transition: all 0.2s;

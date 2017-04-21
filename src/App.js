@@ -75,16 +75,22 @@ class App extends Component {
           dogid : id
         },
         update = dogs.concat(dog);
-     setTimeout(function(){
-        this.setState({ 
-          data: update,
-          "listingClasses" : "listing",
-          "iconClasses" : "search-icon search-icon-animate",
-          "backClasses" : "back-to-results",
-          "listClasses" : "result-list results-list-show",
-          "heartClasses" : "heart heart-pulse"
-        });
-      }.bind(this), 500);
+    //delete during start-dev
+    setTimeout(function(){
+      this.setState({ 
+        data: update,
+        "listingClasses" : "listing",
+        "iconClasses" : "search-icon search-icon-animate",
+        "backClasses" : "back-to-results",
+        "listClasses" : "result-list results-list-show",
+        "heartClasses" : "heart heart-pulse"
+      });
+    }.bind(this), 500);
+    setTimeout(function(){
+      document.getElementById('sd').innerHTML = 'Save to Cart';
+      document.getElementById('sd').classList.remove('save-dog-animate');
+    }, 700);
+
     axios.post(this.props.url, dog)
       .then(res => {
         setTimeout(function(){
@@ -176,8 +182,7 @@ class App extends Component {
         "cartClasses" : "cart cart-show",
         "heartClasses" : "heart heart-open",
         "searchToggle" : true,
-        "searchClasses" : "search",
-        "iconClasses" : "search-icon search-icon-animate"
+        "searchClasses" : "search"
       });
     } else {
       this.setState({
@@ -269,9 +274,7 @@ class App extends Component {
           "backClasses" : "back-to-results back-to-results-show",
           "back2Classes" : "back2"
         });
-        setTimeout(function(){
-          document.body.scrollTop = sc;
-        }, 500);
+        document.body.scrollTop = sc;
 
     } else if( this.state.compareToggle === false 
     && this.state.listClasses === "result-list results-list-show results-list-hide" ) {
@@ -284,9 +287,7 @@ class App extends Component {
           "backClasses" : "back-to-results",
           "back2Classes" : "back2"
         });
-        setTimeout(function(){
-          document.body.scrollTop = sc;
-        }, 500);
+        document.body.scrollTop = sc;
     } else if( this.state.compareToggle === false 
     && this.state.listClasses === "result-list" ) {
         
@@ -298,9 +299,7 @@ class App extends Component {
           "back2Classes" : "back2"
 
         });
-        setTimeout(function(){
-          document.body.scrollTop = sc;
-        }, 500);
+        document.body.scrollTop = sc;
     }
   }
 
