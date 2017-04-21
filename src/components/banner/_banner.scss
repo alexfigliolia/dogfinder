@@ -20,22 +20,6 @@ body{
  	overflow: hidden;
  	transition-duration: 0.5s;
  	font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
- 	&>video {
- 		display: none;
- 		@media #{$mq-1070}{
-		    position: absolute;
-		    z-index: 0;
-		    bottom: 0;
-		    display: initial;
- 		}
-	}
-	&>.fillWidth {
-		display: none;
-		@media #{$mq-1070}{
-			display: initial;
-			width: 100%;
- 		}
-	}
  	&>.center {
  		display: none;
  		@media #{$mq-800} {
