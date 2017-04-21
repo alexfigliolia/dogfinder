@@ -75,14 +75,16 @@ class App extends Component {
           dogid : id
         },
         update = dogs.concat(dog);
+     setTimeout(function(){
         this.setState({ 
-            data: update,
-            "listingClasses" : "listing",
-            "iconClasses" : "search-icon search-icon-animate",
-            "backClasses" : "back-to-results",
-            "listClasses" : "result-list results-list-show",
-            "heartClasses" : "heart heart-pulse"
-          });
+          data: update,
+          "listingClasses" : "listing",
+          "iconClasses" : "search-icon search-icon-animate",
+          "backClasses" : "back-to-results",
+          "listClasses" : "result-list results-list-show",
+          "heartClasses" : "heart heart-pulse"
+        });
+      }.bind(this), 500);
     axios.post(this.props.url, dog)
       .then(res => {
         setTimeout(function(){
