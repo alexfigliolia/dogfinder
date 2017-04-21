@@ -1,0 +1,113 @@
+.compare {
+	min-height: calc(100% - 50px);
+	width: 100%;
+	background: #fff;
+	z-index: 106;
+	position: absolute;
+	top: 50px;
+	color: #279FF6;
+	left: 0;
+	overflow-y: scroll;
+	@include center;
+	transform-origin: 50% 100%;
+	transform: scaleY(0);
+	transition-delay: 0s;
+	transition-duration: 0.4s;
+	@media #{$mq-800} {
+		top: 80px;
+		min-height: calc(100% - 80px);
+	}
+	&>div {
+		@include center;
+		flex-direction: column;
+		width: 100%;
+		margin-top: 40px;
+		&>h1 {
+			font-size: 5vh;
+			margin-bottom: 0.5em;
+			transform: translateY(100px);
+			opacity: 0;
+			transition-duration: 0.4s;
+			transition-delay: 0s;
+		}
+		&>.cc{
+			@include center;
+			width: 90%;
+			flex-wrap: wrap;
+			margin-bottom: 40px;
+			&>.dog-to-compare {
+				@include center;
+				@include headerShadow;
+				flex-direction: column;
+				margin: 1em;
+				cursor: pointer;
+				border-radius: 5px;
+				transform: translateY(100px);
+				opacity: 0;
+				transition-duration: 0.4s;
+				transition-delay: 0s;
+				&>.ccimage {
+					@include center;
+					height: 250px;
+					width: 350px;
+					border: none;
+					position: relative;
+					overflow: hidden;
+					&>img {
+						width: auto;
+						height: 250px;
+						max-width: 350px;
+					}
+				}
+				&>.nameinfo{
+					background: #279FF6;
+					width: 100%;
+					@include center;
+					flex-direction: row;
+					color: #fff;
+					justify-content: space-between;
+					height: 60px;
+					border-bottom-left-radius: 5px;
+					border-bottom-right-radius: 5px;
+					&>h2 {
+						font-size: 1.75em;
+						font-weight: 100;
+						margin: 0;
+					}
+					&>h3 {
+						margin: 0;
+						font-size: 0.8em;
+						margin-left: 20px;
+					}
+					&>h3:last-of-type {
+						margin: 0;
+						margin-right: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+.compare-show {
+	transform: scaleY(1);
+	transition-duration: 0.4s;
+	transition-delay: 0s;
+	&>div>h1 {
+		transform: translateY(0px);
+		opacity: 1;
+		transition-duration: 0.4s;
+		transition-delay: 0.3s;
+	}
+	&>div>.cc>.dog-to-compare {
+		transform: translateY(0px);
+		opacity: 1;
+		transition-duration: 0.4s;
+		transition-delay: 0.35s;
+	}
+	// &>div>.cc>.dog-to-compare>.ccimage {
+	// 	transform: translateY(0px);
+	// 	opacity: 1;
+	// 	transition-duration: 0.4s;
+	// 	transition-delay: 0.4s;
+	// }
+}
