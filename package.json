@@ -2,7 +2,7 @@
   "name": "df2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexfigliolia.github.io/dogfinder-mongodb-react",
+  "homepage": "https://alexfigliolia.github.io/dogfinder",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "node-sass": "^4.5.2",
