@@ -76,29 +76,30 @@ class App extends Component {
         },
         update = dogs.concat(dog);
     //delete during start-dev
-    // setTimeout(function(){
-    //   this.setState({ 
-    //     data: update,
-    //     // "listingClasses" : "listing",
-    //     // "iconClasses" : "search-icon search-icon-animate",
-    //     // "backClasses" : "back-to-results",
-    //     // "listClasses" : "result-list results-list-show",
-    //     "heartClasses" : "heart heart-pulse"
-    //   });
-    // }.bind(this), 500);
+    setTimeout(function(){
+      this.setState({ 
+        data: update,
+        "heartClasses" : "heart heart-pulse"
+      });
+    }.bind(this), 500);
+    setTimeout(function(){
+      this.setState({
+        "heartClasses" : "heart"
+      });
+    }.bind(this), 1000);
     axios.post(this.props.url, dog)
       .then(res => {
-        setTimeout(function(){
-          this.setState({ 
-            data: update,
-            "heartClasses" : "heart heart-pulse"
-          });
-        }.bind(this), 300);
-        setTimeout(function(){
-          this.setState({
-            "heartClasses" : "heart"
-          });
-        }.bind(this), 1000);
+        // setTimeout(function(){
+        //   this.setState({ 
+        //     data: update,
+        //     "heartClasses" : "heart heart-pulse"
+        //   });
+        // }.bind(this), 300);
+        // setTimeout(function(){
+        //   this.setState({
+        //     "heartClasses" : "heart"
+        //   });
+        // }.bind(this), 1000);
         console.log(res);
       })
       .catch(err => {
