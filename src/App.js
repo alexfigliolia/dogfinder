@@ -79,17 +79,17 @@ class App extends Component {
     setTimeout(function(){
       this.setState({ 
         data: update,
-        "listingClasses" : "listing",
-        "iconClasses" : "search-icon search-icon-animate",
-        "backClasses" : "back-to-results",
-        "listClasses" : "result-list results-list-show",
+        // "listingClasses" : "listing",
+        // "iconClasses" : "search-icon search-icon-animate",
+        // "backClasses" : "back-to-results",
+        // "listClasses" : "result-list results-list-show",
         "heartClasses" : "heart heart-pulse"
       });
     }.bind(this), 500);
-    setTimeout(function(){
-      document.getElementById('sd').innerHTML = 'Save to Cart';
-      document.getElementById('sd').classList.remove('save-dog-animate');
-    }, 700);
+    // setTimeout(function(){
+    //   document.getElementById('sd').innerHTML = 'Save to Cart';
+    //   document.getElementById('sd').classList.remove('save-dog-animate');
+    // }, 700);
 
     axios.post(this.props.url, dog)
       .then(res => {
@@ -147,6 +147,13 @@ class App extends Component {
       "searchToggle" : true,
       "searchClasses" : "search",
       "iconClasses" : "search-icon search-icon-animate",
+      "backClasses" : "back-to-results",
+      "back2Classes" : "back2",
+      "listClasses" : "result-list",
+      "listingClasses" : "listing",
+      "compareToggle" : true,
+      "compareClasses" : "compare",
+      "back2Classes" : "back2",
       "dogs" : []
     });
     setTimeout(function(){
@@ -181,9 +188,14 @@ class App extends Component {
         "cartToggle" : false,
         "cartClasses" : "cart cart-show",
         "heartClasses" : "heart heart-open",
-        "searchToggle" : true,
-        "searchClasses" : "search"
       });
+      if(this.state.searchToggle === false) {
+        this.setState({
+          "searchToggle" : true,
+          "searchClasses" : "search",
+          "iconClasses" : "search-icon search-icon-animate"
+        })
+      }
     } else {
       this.setState({
         "cartToggle" : true,
@@ -328,6 +340,10 @@ class App extends Component {
     setTimeout(function(){
       document.body.scrollTop = sc;
     }, 300);
+    setTimeout(function(){
+      document.getElementById('sd').innerHTML = 'Save to Cart';
+      document.getElementById('sd').classList.remove('save-dog-animate');
+    }, 500);
   }
 
   showDog(e){
