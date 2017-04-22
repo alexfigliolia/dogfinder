@@ -76,38 +76,24 @@ class App extends Component {
         },
         update = dogs.concat(dog);
     //delete during start-dev
-    setTimeout(function(){
-      this.setState({ 
-        data: update,
-        // "listingClasses" : "listing",
-        // "iconClasses" : "search-icon search-icon-animate",
-        // "backClasses" : "back-to-results",
-        // "listClasses" : "result-list results-list-show",
-        "heartClasses" : "heart heart-pulse"
-      });
-    }.bind(this), 500);
     // setTimeout(function(){
-    //   document.getElementById('sd').innerHTML = 'Save to Cart';
-    //   document.getElementById('sd').classList.remove('save-dog-animate');
-    // }, 700);
-
+    //   this.setState({ 
+    //     data: update,
+    //     // "listingClasses" : "listing",
+    //     // "iconClasses" : "search-icon search-icon-animate",
+    //     // "backClasses" : "back-to-results",
+    //     // "listClasses" : "result-list results-list-show",
+    //     "heartClasses" : "heart heart-pulse"
+    //   });
+    // }.bind(this), 500);
     axios.post(this.props.url, dog)
       .then(res => {
         setTimeout(function(){
           this.setState({ 
             data: update,
-            "listingClasses" : "listing",
-            "iconClasses" : "search-icon search-icon-animate",
-            "backClasses" : "back-to-results",
-            "listClasses" : "result-list results-list-show",
             "heartClasses" : "heart heart-pulse"
           });
-          this.backToResults();
         }.bind(this), 300);
-        setTimeout(function(){
-          document.getElementById('sd').innerHTML = 'Save to Cart';
-          document.getElementById('sd').classList.remove('save-dog-animate');
-        }, 700);
         setTimeout(function(){
           this.setState({
             "heartClasses" : "heart"
@@ -149,11 +135,9 @@ class App extends Component {
       "iconClasses" : "search-icon search-icon-animate",
       "backClasses" : "back-to-results",
       "back2Classes" : "back2",
-      "listClasses" : "result-list",
       "listingClasses" : "listing",
       "compareToggle" : true,
       "compareClasses" : "compare",
-      "back2Classes" : "back2",
       "dogs" : []
     });
     setTimeout(function(){

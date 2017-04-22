@@ -83,7 +83,8 @@
 					margin: 0;
 					width: 40px;
 					height: 40px;
-					background: #fff;
+					background: #fff url('../public/cross.svg') no-repeat center;
+					background-size: 70% 70%;
 					@include center;
 					@include headerShadow;
 					border: none;
@@ -91,8 +92,6 @@
 					border-radius: 50%;
 					color: #279FF6;
 					transition: all 0.2s;
-					background-position: center;
-					background-size: 0% 0%;
 					font-weight: 900;
 				}
 				&>.remove-dog-animate{
